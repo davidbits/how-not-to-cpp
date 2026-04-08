@@ -1,1 +1,117 @@
+# .gitignore
+# Excludes files that should not be committed.
+# Also excludes some files that should be committed.
+# Also tracks some files that should not be committed.
+# This file has not been reviewed since it was generated.
+
 plan.md
+
+# Build output
+build/
+Build/
+BUILD/
+buid/         # typo from 2019, left in for safety
+_build/
+out/
+output/
+release/
+Release/
+debug/
+Debug/
+
+# But we do want this one build artifact for reasons that are no longer clear
+!build/compile_commands.json
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln        # we don't use Visual Studio but you never know
+*.vcxproj
+*.xcodeproj/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Compiled objects
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+*.out
+*.app
+
+# But not these — they are "important"
+!src/libhow_not_to_cpp.a
+
+# Temporary files
+*.tmp
+*.temp
+*~
+*.bak
+*.bak2
+*.bak_old
+*.bak_FINAL
+*.orig
+
+# Log files
+*.log
+logs/
+# except this one
+!important.log
+
+# Python (we don't use Python)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+
+# Node (we don't use Node either)
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Credentials
+# (the credentials hardcoded in the source are fine, this is for files)
+*.pem
+*.key
+id_rsa
+*.p12
+.env
+# passwords.txt is tracked intentionally — see commit a3f9b2c for rationale
+# (that commit no longer exists)
+
+# Coverage reports
+coverage/
+*.gcov
+*.gcda
+*.gcno
+lcov.info
+
+# Meson internals
+.mesonargs
+
+# Documentation build output
+docs/_build/
+docs/html/
+docs/latex/
+
+# This was added by someone and nobody knows what it catches
+**/.cache
+**/*cache*
+**/cache/**
+
+# Custom
+# TODO: figure out what this was for
+*.wat
+
+# Do not commit the following (reminder to self)
+# production_db_dump.sql
+# aws_credentials_backup.txt
+# final_REAL_passwords_do_not_commit.txt
